@@ -1,378 +1,203 @@
-// Professional Website JavaScript for Arpit Kumar Tali
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.querySelector(".site-header");
+    const menuToggle = document.getElementById("menuToggle");
+    const siteNav = document.getElementById("siteNav");
+    const navLinks = Array.from(document.querySelectorAll(".site-nav a"));
+    const sections = Array.from(document.querySelectorAll("main section[id]"));
+    const revealItems = Array.from(document.querySelectorAll(".reveal"));
+    const contactForm = document.getElementById("contactForm");
+    const copyright = document.querySelector(".copyright");
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Menu Toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            const icon = this.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+    const closeMenu = () => {
+        if (!siteNav || !menuToggle) {
+            return;
+        }
+
+        siteNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        const icon = menuToggle.querySelector("i");
+        if (icon) {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+        }
+    };
+
+    const openMenu = () => {
+        if (!siteNav || !menuToggle) {
+            return;
+        }
+
+        siteNav.classList.add("is-open");
+        menuToggle.setAttribute("aria-expanded", "true");
+
+        const icon = menuToggle.querySelector("i");
+        if (icon) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+        }
+    };
+
+    if (menuToggle && siteNav) {
+        menuToggle.addEventListener("click", () => {
+            if (siteNav.classList.contains("is-open")) {
+                closeMenu();
             } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                openMenu();
             }
         });
     }
-    
-    // Close mobile menu when clicking on a link
-    const navItems = document.querySelectorAll('.nav-links a');
-    navItems.forEach(item => {
-        item.addEventListener('click', function() {
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            closeMenu();
         });
     });
-    
-    // Dropdown toggle for mobile
-    const dropdowns = document.querySelectorAll('.dropdown > a');
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const parent = this.parentElement;
-                parent.classList.toggle('active');
-                
-                // Close other dropdowns
-                document.querySelectorAll('.dropdown').forEach(other => {
-                    if (other !== parent) {
-                        other.classList.remove('active');
+
+    document.addEventListener("click", (event) => {
+        if (!siteNav || !menuToggle || !siteNav.classList.contains("is-open")) {
+            return;
+        }
+
+        const clickedInsideHeader = header && header.contains(event.target);
+        if (!clickedInsideHeader) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    const revealAll = () => {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+    };
+
+    if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("is-visible");
+                        revealObserver.unobserve(entry.target);
                     }
                 });
+            },
+            {
+                threshold: 0.14,
+                rootMargin: "0px 0px -6% 0px",
             }
-        });
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                const headerHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = targetElement.offsetTop - headerHeight;
-                
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Form submission handling - redirect to WhatsApp
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(this);
-            const formValues = Object.fromEntries(formData.entries());
-            
-            // Construct WhatsApp message
-            const whatsappMessage = `New contact form submission:%0A%0AName: ${encodeURIComponent(formValues.name)}%0AEmail: ${encodeURIComponent(formValues.email)}%0ASubject: ${encodeURIComponent(formValues.subject)}%0AMessage: ${encodeURIComponent(formValues.message)}`;
-            const whatsappUrl = `https://wa.me/919876543210?text=${whatsappMessage}`;
-            
-            // Open WhatsApp in a new tab
-            window.open(whatsappUrl, '_blank');
-            
-            // Show notification
-            showNotification('Opening WhatsApp to send your message...', 'success');
-            
-            // Reset form
-            this.reset();
-        });
+        );
+
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealAll();
     }
-    
-    // Animate skill bars when they come into view
-    const skillBars = document.querySelectorAll('.skill-level');
-    const observerOptions = {
-        threshold: 0.5
+
+    const setActiveLink = (id) => {
+        navLinks.forEach((link) => {
+            const isActive = link.getAttribute("href") === `#${id}`;
+            link.classList.toggle("is-active", isActive);
+        });
     };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const skillBar = entry.target;
-                const width = skillBar.style.width;
-                skillBar.style.width = '0%';
-                
-                // Animate to the target width
-                setTimeout(() => {
-                    skillBar.style.transition = 'width 1.5s ease-in-out';
-                    skillBar.style.width = width;
-                }, 300);
-                
-                // Stop observing after animation
-                observer.unobserve(skillBar);
-            }
-        });
-    }, observerOptions);
-    
-    skillBars.forEach(bar => {
-        observer.observe(bar);
-    });
-    
-    // Add active class to navbar links based on scroll position
-    const sections = document.querySelectorAll('section');
-    const navLinkItems = document.querySelectorAll('.nav-links a');
-    
-    function highlightNavLink() {
-        let current = '';
-        const scrollPosition = window.scrollY + 100;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinkItems.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-    
-    window.addEventListener('scroll', highlightNavLink);
-    
-    // Notification function
-    function showNotification(message, type = 'info') {
-        // Remove existing notification
-        const existingNotification = document.querySelector('.notification');
-        if (existingNotification) {
-            existingNotification.remove();
-        }
-        
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        notification.innerHTML = `
-            <p>${message}</p>
-            <button class="notification-close">&times;</button>
-        `;
-        
-        // Add to body
-        document.body.appendChild(notification);
-        
-        // Add styles for notification
-        const style = document.createElement('style');
-        style.textContent = `
-            .notification {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                padding: 15px 20px;
-                background: white;
-                border-radius: 5px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                min-width: 300px;
-                max-width: 400px;
-                z-index: 9999;
-                animation: slideIn 0.3s ease-out;
-                border-left: 4px solid #3498db;
-            }
-            
-            .notification.success {
-                border-left-color: #2ecc71;
-            }
-            
-            .notification.error {
-                border-left-color: #e74c3c;
-            }
-            
-            .notification p {
-                margin: 0;
-                flex: 1;
-            }
-            
-            .notification-close {
-                background: none;
-                border: none;
-                font-size: 1.5rem;
-                cursor: pointer;
-                color: #777;
-                margin-left: 15px;
-            }
-            
-            @keyframes slideIn {
-                from {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-                to {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        // Close button functionality
-        const closeButton = notification.querySelector('.notification-close');
-        closeButton.addEventListener('click', function() {
-            notification.style.animation = 'slideOut 0.3s ease-out';
-            setTimeout(() => {
-                notification.remove();
-                style.remove();
-            }, 300);
-        });
-        
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.style.animation = 'slideOut 0.3s ease-out';
-                setTimeout(() => {
-                    notification.remove();
-                    style.remove();
-                }, 300);
-            }
-        }, 5000);
-    }
-    
-    // Add animation to portfolio items on scroll
-    const portfolioItems = document.querySelectorAll('.portfolio-item');
-    const portfolioObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-    
-    portfolioItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        portfolioObserver.observe(item);
-    });
 
-    // Scroll-triggered animations for elements with class 'animate-on-scroll'
-    const animateElements = document.querySelectorAll('.animate-on-scroll');
-    const animateObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
-                // Optional: stop observing after animation
-                animateObserver.unobserve(entry.target);
+    if ("IntersectionObserver" in window && sections.length > 0) {
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveLink(entry.target.id);
+                    }
+                });
+            },
+            {
+                threshold: 0.3,
+                rootMargin: "-42% 0px -42% 0px",
             }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    });
+        );
 
-    animateElements.forEach(el => {
-        animateObserver.observe(el);
-    });
-
-    // Current year in footer
-    const currentYear = new Date().getFullYear();
-    const yearElement = document.querySelector('.footer p');
-    if (yearElement && yearElement.textContent.includes('2023')) {
-        yearElement.textContent = yearElement.textContent.replace('2023', currentYear);
+        sections.forEach((section) => sectionObserver.observe(section));
+    } else if (sections.length > 0) {
+        setActiveLink("home");
     }
-    
-    // Add scroll-to-top button
-    const scrollToTopButton = document.createElement('button');
-    scrollToTopButton.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    scrollToTopButton.className = 'scroll-to-top';
-    document.body.appendChild(scrollToTopButton);
-    
-    // Style the scroll-to-top button
-    const scrollToTopStyle = document.createElement('style');
-    scrollToTopStyle.textContent = `
-        .scroll-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(90deg, #3498db, #2ecc71);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-            z-index: 999;
-        }
-        
-        .scroll-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .scroll-to-top:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
-        }
-    `;
-    document.head.appendChild(scrollToTopStyle);
-    
-    // Show/hide scroll-to-top button based on scroll position
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 500) {
-            scrollToTopButton.classList.add('visible');
-        } else {
-            scrollToTopButton.classList.remove('visible');
-        }
-    });
-    
-    // Scroll to top functionality
-    scrollToTopButton.addEventListener('click', function() {
+
+    const backToTop = document.createElement("button");
+    backToTop.type = "button";
+    backToTop.className = "back-to-top";
+    backToTop.setAttribute("aria-label", "Back to top");
+    backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    document.body.appendChild(backToTop);
+
+    const updateBackToTop = () => {
+        backToTop.classList.toggle("is-visible", window.scrollY > 600);
+    };
+
+    window.addEventListener("scroll", updateBackToTop, { passive: true });
+    updateBackToTop();
+
+    backToTop.addEventListener("click", () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
+            behavior: "smooth",
         });
     });
-    
-    // Typing animation for hero title
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        heroTitle.textContent = '';
-        let i = 0;
-        const typeWriter = () => {
-            if (i < originalText.length) {
-                heroTitle.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        };
-        // Start after a short delay
-        setTimeout(typeWriter, 500);
+
+    const showToast = (title, message) => {
+        const existingToast = document.querySelector(".toast");
+        if (existingToast) {
+            existingToast.remove();
+        }
+
+        const toast = document.createElement("div");
+        toast.className = "toast";
+        toast.innerHTML = `
+            <strong>${title}</strong>
+            <p>${message}</p>
+        `;
+
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+            toast.classList.add("is-visible");
+        });
+
+        window.setTimeout(() => {
+            toast.classList.remove("is-visible");
+            window.setTimeout(() => {
+                toast.remove();
+            }, 220);
+        }, 3600);
+    };
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+            const messageParts = [
+                "New portfolio inquiry",
+                `Name: ${data.name || ""}`,
+                `Email: ${data.email || ""}`,
+                `Project type: ${data.project || ""}`,
+                `Details: ${data.message || ""}`,
+            ];
+
+            const whatsappMessage = encodeURIComponent(messageParts.join("\n\n"));
+            const whatsappUrl = `https://wa.me/918480132050?text=${whatsappMessage}`;
+
+            window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+            contactForm.reset();
+            closeMenu();
+            showToast("WhatsApp ready", "Your project message has been prepared in WhatsApp.");
+        });
     }
 
-    // Initialize with nav link highlighting
-    highlightNavLink();
+    if (copyright) {
+        copyright.textContent = `\u00A9 ${new Date().getFullYear()} Arpit Kumar Tali. All rights reserved.`;
+    }
+
+    setActiveLink("home");
 });

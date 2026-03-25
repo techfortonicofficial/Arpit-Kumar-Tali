@@ -3,563 +3,524 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arpit Kumar Tali | Professional Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Arpit Kumar Tali, a web developer and digital consultant building polished websites, support systems, and practical tech experiences.">
+    <meta name="theme-color" content="#0f172a">
+    <title>Arpit Kumar Tali | Web Developer & Digital Consultant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">Arpit Kumar Tali</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills & Experience</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li class="dropdown">
-                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#services">All Services</a></li>
-                        <li><a href="./Web-Services" target="_blank">Web Services</a></li>
-                        <li><a href="./Tech-Courses" target="_blank">Tech Courses</a></li>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#home" class="brand" aria-label="Arpit Kumar Tali home">
+                <span class="brand-mark">AK</span>
+                <span class="brand-copy">
+                    <strong>Arpit Kumar Tali</strong>
+                    <small>Web Developer & Digital Consultant</small>
+                </span>
+            </a>
+
+            <nav class="site-nav" id="siteNav" aria-label="Primary">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#process">Process</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a class="button button--ghost button--small" href="Arpit_Kumar_Tali_Resume.pdf" download>Resume</a>
+                <button class="nav-toggle" id="menuToggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow reveal">Available for freelance and contract projects</p>
+                    <h1 class="hero-title reveal">Professional websites and digital support that help businesses look credible and work smoothly.</h1>
+                    <p class="hero-subtitle reveal">
+                        I design and build responsive websites, practical web apps, and clear technical experiences for founders, small businesses, and teams that want reliable results without unnecessary complexity.
+                    </p>
+
+                    <div class="hero-actions reveal">
+                        <a class="button button--primary" href="#contact">Start a Project</a>
+                        <a class="button button--secondary button--emphasis" href="#work">View Work</a>
+                        <a class="button button--ghost" href="Arpit_Kumar_Tali_Resume.pdf" download>Download Resume</a>
+                    </div>
+
+                    <ul class="hero-traits reveal" aria-label="Core strengths">
+                        <li>Responsive web design</li>
+                        <li>Full-stack delivery</li>
+                        <li>Technical support and training</li>
                     </ul>
-                </li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Hi, I'm <span class="highlight">Arpit Kumar Tali</span>
-                    </h1>
-                    <h2 class="hero-subtitle">Professional Developer & Technology Enthusiast</h2>
-                    <p class="hero-description">
-                        I create innovative digital solutions with a focus on clean code, user experience, 
-                        and modern technologies. Passionate about turning complex problems into simple, 
-                        beautiful designs.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#portfolio" class="btn btn-primary">View My Work</a>
-                        <a href="https://wa.me/918480132050?text=Hello%20Arpit,%20I%20would%20like%20to%20get%20in%20touch%20regarding%20your%20services." class="btn btn-secondary" target="_blank">Get In Touch</a>
+                    <div class="hero-metrics">
+                        <article class="metric-card reveal">
+                            <strong>10+</strong>
+                            <span>web applications delivered</span>
+                        </article>
+                        <article class="metric-card reveal">
+                            <strong>20+</strong>
+                            <span>client websites supported</span>
+                        </article>
+                        <article class="metric-card reveal">
+                            <strong>50K+</strong>
+                            <span>daily API requests handled</span>
+                        </article>
+                        <article class="metric-card reveal">
+                            <strong>30%</strong>
+                            <span>server cost reduction achieved</span>
+                        </article>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="image-placeholder">
-                        <img src="a.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        I am a passionate technology professional with expertise in software development, 
-                        web technologies, networking, and digital innovation. With a strong foundation in computer science 
-                        and years of hands-on experience, I specialize in creating efficient, scalable solutions 
-                        that drive business success.
-                    </p>
-                    <p>
-                        My approach combines technical excellence with creative problem-solving, ensuring 
-                        that every project not only meets but exceeds expectations. I believe in continuous 
-                        learning and staying updated with the latest industry trends.
-                    </p>
-                    <div class="about-details">
-                        <div class="detail-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <div>
-                                <h3>Education</h3>
-                                <p>Computer Science & Engineering</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Location</h3>
-                                <p>Deogarh, Odisha, India</p>
-                            </div>
-                        </div>
-                        <div class="detail-item">
-                            <i class="fas fa-briefcase"></i>
-                            <div>
-                                <h3>Experience</h3>
-                                <p>5+ Years in Tech Industry</p>
-                            </div>
-                        </div>
+                <div class="hero-visual">
+                    <figure class="portrait-card reveal">
+                        <img src="a.jpg" alt="Portrait of Arpit Kumar Tali">
+                    </figure>
+                    <div class="visual-notes">
+                        <article class="visual-note reveal">
+                            <span>Approach</span>
+                            <strong>Clear, practical, and easy to maintain.</strong>
+                        </article>
+                        <article class="visual-note reveal">
+                            <span>Location</span>
+                            <strong>Based in India and open to remote collaboration.</strong>
+                        </article>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills & Experience Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Experience</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Frontend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span>HTML/CSS</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 95%"></div></div>
+        <section id="about" class="section section--light">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">About</span>
+                    <h2>Focused on practical digital work that feels trustworthy from the first click.</h2>
+                    <p>I help teams turn ideas into professional websites and supportive technical systems that are easy to use, easy to maintain, and aligned with business goals.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-copy reveal">
+                        <p>
+                            My work blends front-end development, responsive UI, backend integration, technical support, and clear communication. That combination makes it easier to launch websites that feel polished and stay useful after handoff.
+                        </p>
+                        <p>
+                            I also enjoy helping people understand the technical side of a project. Whether it is troubleshooting, onboarding, or short training, I focus on making complex things feel manageable.
+                        </p>
+
+                        <div class="about-highlights">
+                            <article class="about-card">
+                                <i class="fa-solid fa-laptop-code"></i>
+                                <h3>Website delivery</h3>
+                                <p>Business sites, portfolios, landing pages, and responsive interfaces.</p>
+                            </article>
+                            <article class="about-card">
+                                <i class="fa-solid fa-headset"></i>
+                                <h3>Technical support</h3>
+                                <p>Troubleshooting, maintenance, documentation, and remote assistance.</p>
+                            </article>
+                            <article class="about-card">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <h3>Training and guidance</h3>
+                                <p>Practical teaching, project support, and learner-friendly explanations.</p>
+                            </article>
                         </div>
-                        <div class="skill-item">
+                    </div>
+
+                    <aside class="info-panel reveal">
+                        <div class="info-panel__header">
+                            <span>Quick facts</span>
+                            <h3>What clients usually care about</h3>
+                        </div>
+                        <div class="fact-grid">
+                            <div class="fact-card">
+                                <span class="fact-label">Based in</span>
+                                <strong>Deogarh, Odisha, India</strong>
+                            </div>
+                            <div class="fact-card">
+                                <span class="fact-label">Best for</span>
+                                <strong>Web, support, and training</strong>
+                            </div>
+                            <div class="fact-card">
+                                <span class="fact-label">Response style</span>
+                                <strong>Clear updates and practical handoff</strong>
+                            </div>
+                            <div class="fact-card">
+                                <span class="fact-label">Availability</span>
+                                <strong>Open to remote collaboration</strong>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section section--tinted">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">Services</span>
+                    <h2>Everything needed to launch, improve, and support a modern online presence.</h2>
+                    <p>From first draft to maintenance, I keep the process practical so the final result is easier to run and easier to trust.</p>
+                </div>
+
+                <div class="service-grid">
+                    <article class="service-card reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-code"></i></div>
+                        <h3>Business websites</h3>
+                        <p>Responsive websites and landing pages that present your offer clearly and guide people toward action.</p>
+                        <ul class="service-points">
+                            <li>Portfolio and service sites</li>
+                            <li>Lead-focused landing pages</li>
+                            <li>Mobile-first layouts</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <h3>Web applications</h3>
+                        <p>Interactive front ends and full-stack builds for dashboards, tools, and product experiences.</p>
+                        <ul class="service-points">
+                            <li>React and JavaScript interfaces</li>
+                            <li>API integration</li>
+                            <li>Reusable UI systems</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                        <h3>Support and maintenance</h3>
+                        <p>Reliable help for troubleshooting, updates, documentation, and ongoing improvements.</p>
+                        <ul class="service-points">
+                            <li>Issue diagnosis</li>
+                            <li>Performance tuning</li>
+                            <li>Content and site updates</li>
+                        </ul>
+                    </article>
+                    <article class="service-card reveal">
+                        <div class="service-card__icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <h3>Training and mentorship</h3>
+                        <p>Clear technical guidance for learners, teams, and clients who need practical explanations.</p>
+                        <ul class="service-points">
+                            <li>Project walkthroughs</li>
+                            <li>Technical coaching</li>
+                            <li>Support for web and networking topics</li>
+                        </ul>
+                    </article>
+                </div>
+
+                <div class="service-cta reveal">
+                    <div>
+                        <span class="section-kicker">Need a custom scope?</span>
+                        <h3>Let us build something polished, useful, and simple to maintain.</h3>
+                    </div>
+                    <a class="button button--primary" href="#contact">Discuss Your Project</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section section--light">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">Work</span>
+                    <h2>Selected work samples and results that show how I approach real projects.</h2>
+                    <p>This portfolio focuses on the kind of outcomes clients usually need: strong presentation, dependable delivery, and measurable improvement.</p>
+                </div>
+
+                <div class="work-grid">
+                    <article class="project-card reveal">
+                        <p class="project-label">Agency delivery</p>
+                        <h3>Client websites that look credible and convert.</h3>
+                        <p>Responsive business websites, polished landing pages, and SEO-friendly structure for service-based clients.</p>
+                        <div class="project-stats">
+                            <div><strong>20+</strong><span>clients supported</span></div>
+                            <div><strong>45%</strong><span>avg traffic lift</span></div>
+                        </div>
+                        <div class="tag-list">
+                            <span>HTML</span>
+                            <span>CSS</span>
                             <span>JavaScript</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 70%"></div></div>
+                            <span>SEO</span>
                         </div>
-                        <div class="skill-item">
-                            <span>React</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Vue.js</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-server"></i> Backend</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span>Node.js</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 88%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Python</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Java</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 82%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Database Design</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 90%"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Others</h3>
-                    <div class="skill-list">
-                        <div class="skill-item">
-                            <span>Git & GitHub</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 92%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>Docker</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 80%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>AWS</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 75%"></div></div>
-                        </div>
-                        <div class="skill-item">
-                            <span>UI/UX Design</span>
-                            <div class="skill-bar"><div class="skill-level" style="width: 85%"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    </article>
 
-    <!-- Resume Section -->
-    <section id="resume" class="resume">
-        <div class="container">       
-            <div class="resume-content">
-                <!-- Left Column: Experience & Education -->
-                <div class="resume-column">
-                    <div class="resume-section">
-                        <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-date">2026 - Present</div>
-                                <div class="timeline-content">
-                                    <h4>Full Stack Developer</h4>
-                                    <h5>Freelancer</h5>
-                                    <p>Providing full-stack development services to various clients, focusing on creating efficient and scalable web applications, along with providing tech courses and project support.</p>
-                                    <ul class="achievement-list">
-                                        <li>Most Affordable Web and Android/ iOS Development Services</li>
-                                        <li>Web Hosting Starting from ₹899/year</li>
-                                        <li>Tech Courses like Web, mobile, and networking pathways in one place</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2020 - 2022</div>
-                                <div class="timeline-content">
-                                    <h4>Full Stack Developer</h4>
-                                    <h5>Digital Solutions Ltd.</h5>
-                                    <p>Developed and maintained 10+ web applications using React, Node.js, and MongoDB. Collaborated with UX designers to create responsive interfaces.</p>
-                                    <ul class="achievement-list">
-                                        <li>Built RESTful APIs serving 50,000+ daily requests</li>
-                                        <li>Implemented real-time features using WebSockets</li>
-                                        <li>Reduced server costs by 30% through AWS optimization</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2018 - 2020</div>
-                                <div class="timeline-content">
-                                    <h4>Web Developer</h4>
-                                    <h5>Creative Web Agency</h5>
-                                    <p>Created custom websites and web applications for 20+ clients across various industries. Focused on responsive design and SEO optimization.</p>
-                                    <ul class="achievement-list">
-                                        <li>Increased client website traffic by average of 45%</li>
-                                        <li>Developed reusable component library reducing development time by 25%</li>
-                                        <li>Implemented accessibility standards achieving WCAG 2.1 compliance</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <article class="project-card reveal">
+                        <p class="project-label">Product engineering</p>
+                        <h3>Full-stack applications with clean interfaces.</h3>
+                        <p>Built and maintained web applications using React, Node.js, and MongoDB with a focus on stability and clarity.</p>
+                        <div class="project-stats">
+                            <div><strong>10+</strong><span>applications delivered</span></div>
+                            <div><strong>50K+</strong><span>daily API requests</span></div>
                         </div>
-                    </div>
-                    
-                    <div class="resume-section">
-                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <div class="timeline-date">2014 - 2018</div>
-                                <div class="timeline-content">
-                                    <h4>Bachelor of Technology in Computer Science & Engineering</h4>
-                                    <h5>National Institute of Technology, Karnataka</h5>
-                                    <p>CGPA: 8.5/10 | Specialization: Software Engineering</p>
-                                    <p class="education-details">Relevant Coursework: Data Structures, Algorithms, Database Systems, Web Technologies, Cloud Computing</p>
-                                </div>
-                            </div>
-                            <div class="timeline-item">
-                                <div class="timeline-date">2012 - 2014</div>
-                                <div class="timeline-content">
-                                    <h4>Higher Secondary (12th Grade)</h4>
-                                    <h5>Central Board of Secondary Education</h5>
-                                    <p>Percentage: 92% | Stream: Science with Computer Science</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Right Column: Skills, Certifications & Awards -->
-                <div class="resume-column">
-                    <div class="resume-section">
-                        <h3><i class="fas fa-code"></i> Technical Skills</h3>
-                        <div class="skills-summary">
-                            <div class="skill-category">
-                                <h4>Frontend Development</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">HTML5/CSS3</span>
-                                    <span class="skill-tag">JavaScript (ES6+)</span>
-                                    <span class="skill-tag">React.js</span>
-                                    <span class="skill-tag">Vue.js</span>
-                                    <span class="skill-tag">TypeScript</span>
-                                    <span class="skill-tag">Responsive Design</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Backend Development</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Node.js</span>
-                                    <span class="skill-tag">Python</span>
-                                    <span class="skill-tag">Java</span>
-                                    <span class="skill-tag">Express.js</span>
-                                    <span class="skill-tag">REST APIs</span>
-                                    <span class="skill-tag">GraphQL</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Databases & Cloud</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">MongoDB</span>
-                                    <span class="skill-tag">PostgreSQL</span>
-                                    <span class="skill-tag">AWS</span>
-                                    <span class="skill-tag">Docker</span>
-                                    <span class="skill-tag">Kubernetes</span>
-                                    <span class="skill-tag">CI/CD</span>
-                                </div>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Tools & Methodologies</h4>
-                                <div class="skill-tags">
-                                    <span class="skill-tag">Git/GitHub</span>
-                                    <span class="skill-tag">Agile/Scrum</span>
-                                    <span class="skill-tag">JIRA</span>
-                                    <span class="skill-tag">Figma</span>
-                                    <span class="skill-tag">Postman</span>
-                                    <span class="skill-tag">VS Code</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="resume-section">
-                        <h3><i class="fas fa-certificate"></i> Certifications</h3>
-                        <ul class="certification-list">
-                            <li><strong>AWS Certified Solutions Architect – Associate</strong> (2022)</li>
-                            <li><strong>Google Professional Cloud Developer</strong> (2021)</li>
-                            <li><strong>Microsoft Certified: Azure Fundamentals</strong> (2020)</li>
-                            <li><strong>Scrum Master Certified (SMCC)</strong> (2019)</li>
-                            <li><strong>Oracle Java SE 8 Programmer</strong> (2018)</li>
-                            <li><strong>React Developer Certification</strong> (2021)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resume-section">
-                        <h3><i class="fas fa-trophy"></i> Awards & Recognition</h3>
-                        <ul class="awards-list">
-                            <li><strong>Employee of the Year</strong> – Tech Innovations Inc. (2023)</li>
-                            <li><strong>Best Open Source Contributor</strong> – GitHub India (2021)</li>
-                            <li><strong>Hackathon Winner</strong> – Smart India Hackathon (2020)</li>
-                            <li><strong>Innovation Award</strong> – Digital Solutions Ltd. (2021)</li>
-                            <li><strong>Top Performer</strong> – Quarterly Performance Review (2022 Q3)</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="resume-section">
-                        <h3><i class="fas fa-language"></i> Languages</h3>
-                        <div class="languages">
-                            <div class="language-item">
-                                <span>English</span>
-                                <span class="language-level">Fluent</span>
-                            </div>
-                            <div class="language-item">
-                                <span>Hindi</span>
-                                <span class="language-level">Native</span>
-                            </div>
-                            <div class="language-item">
-                                <span>Odia</span>
-                                <span class="language-level">Native</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="resume-footer">
-                <p><strong>References available upon request.</strong> For a complete portfolio of projects, please visit the <a href="#portfolio">Portfolio section</a> or check my <a href="#contact">Contact Page</a>.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="portfolio-grid">
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>E-Commerce Platform</h3>
-                        <p>Full-stack e-commerce solution with React frontend, Node.js backend, and MongoDB database.</p>
-                        <div class="portfolio-tags">
+                        <div class="tag-list">
                             <span>React</span>
                             <span>Node.js</span>
                             <span>MongoDB</span>
+                            <span>REST APIs</span>
                         </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Data Analytics Dashboard</h3>
-                        <p>Interactive dashboard for real-time data visualization and business intelligence.</p>
-                        <div class="portfolio-tags">
-                            <span>Python</span>
-                            <span>D3.js</span>
-                            <span>Flask</span>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <p class="project-label">Operations and cloud</p>
+                        <h3>Practical optimization that improved reliability.</h3>
+                        <p>Worked on WebSockets, AWS tuning, and deployment workflows to keep systems responsive and cost-aware.</p>
+                        <div class="project-stats">
+                            <div><strong>30%</strong><span>cost reduction</span></div>
+                            <div><strong>Realtime</strong><span>feature support</span></div>
                         </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>Mobile Fitness App</h3>
-                        <p>Cross-platform mobile application for fitness tracking with personalized workout plans.</p>
-                        <div class="portfolio-tags">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Redux</span>
+                        <div class="tag-list">
+                            <span>AWS</span>
+                            <span>Docker</span>
+                            <span>WebSockets</span>
+                            <span>CI/CD</span>
                         </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="portfolio-image">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <div class="portfolio-content">
-                        <h3>AI Chatbot System</h3>
-                        <p>Intelligent chatbot using natural language processing for customer service automation.</p>
-                        <div class="portfolio-tags">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
-                            <span>NLP</span>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <p class="project-label">Teaching and support</p>
+                        <h3>Training that makes technical work easier to adopt.</h3>
+                        <p>Provided course guidance, project support, and learner-friendly explanations across web, mobile, and networking topics.</p>
+                        <div class="project-stats">
+                            <div><strong>Clear</strong><span>technical communication</span></div>
+                            <div><strong>Remote</strong><span>support friendly</span></div>
                         </div>
-                    </div>
+                        <div class="tag-list">
+                            <span>Mentorship</span>
+                            <span>Documentation</span>
+                            <span>Networking</span>
+                            <span>Project support</span>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">My Services</h2>
-            <div class="services-grid">
-                <div class="service-item animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web Services</h3>
-                    <p>Comprehensive web development services including custom websites, e-commerce solutions, and web applications with 24/7 support.</p>
-                    <a href="./Web-Services" class="service-link" target="_blank">Visit Web Services Website →</a>
+        <section id="experience" class="section section--tinted">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">Experience</span>
+                    <h2>A concise timeline of the work behind the portfolio.</h2>
+                    <p>The goal here is not just to list roles, but to show the type of delivery and responsibility each stage added to the process.</p>
                 </div>
-                <div class="service-item animate-on-scroll">
-                    <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+
+                <div class="experience-layout">
+                    <div class="timeline">
+                        <article class="timeline-item reveal">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <p class="timeline-date">Current</p>
+                                <h3>Freelance Technology and Web Services</h3>
+                                <p>Deliver website creation, updates, and ongoing support for clients and small businesses while also helping with project guidance and practical technical questions.</p>
+                                <ul>
+                                    <li>Business websites and maintenance</li>
+                                    <li>Project support and troubleshooting</li>
+                                    <li>Web, mobile, and networking guidance</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item reveal">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <p class="timeline-date">2020 - 2022</p>
+                                <h3>Full Stack Developer, Digital Solutions Ltd.</h3>
+                                <p>Developed and maintained web applications with React, Node.js, and MongoDB, with a focus on reliability, performance, and clear implementation.</p>
+                                <ul>
+                                    <li>Built APIs serving 50,000+ daily requests</li>
+                                    <li>Added real-time features with WebSockets</li>
+                                    <li>Improved server efficiency through AWS optimization</li>
+                                </ul>
+                            </div>
+                        </article>
+
+                        <article class="timeline-item reveal">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <p class="timeline-date">2018 - 2020</p>
+                                <h3>Web Developer, Creative Web Agency</h3>
+                                <p>Created responsive websites and web applications for a wide range of clients, with strong attention to usability, accessibility, and SEO.</p>
+                                <ul>
+                                    <li>Delivered work for 20+ clients</li>
+                                    <li>Improved traffic through SEO-aware layouts</li>
+                                    <li>Reduced development time with reusable components</li>
+                                </ul>
+                            </div>
+                        </article>
                     </div>
-                    <h3>Tech Courses</h3>
-                    <p>Modern technology courses in web development, mobile app development, networking, and more with personalized mentorship.</p>
-                    <a href="./Tech-Courses" class="service-link" target="_blank">Visit Tech Courses Website →</a>
+
+                    <aside class="credentials reveal">
+                        <article class="credential-card">
+                            <span class="credential-label">Education</span>
+                            <h3>B.Tech in Computer Science and Engineering</h3>
+                            <p>National Institute of Technology, Karnataka</p>
+                            <p class="credential-note">Relevant areas: algorithms, databases, web technologies, and cloud computing.</p>
+                        </article>
+                        <article class="credential-card">
+                            <span class="credential-label">Certifications</span>
+                            <h3>Cloud, agile, and development credentials</h3>
+                            <ul>
+                                <li>AWS Certified Solutions Architect - Associate</li>
+                                <li>Google Professional Cloud Developer</li>
+                                <li>Microsoft Certified: Azure Fundamentals</li>
+                                <li>Scrum Master Certified and React certification</li>
+                            </ul>
+                        </article>
+                        <article class="credential-card">
+                            <span class="credential-label">Languages</span>
+                            <h3>Comfortable working across multiple audiences</h3>
+                            <ul>
+                                <li>English - Fluent</li>
+                                <li>Hindi - Native</li>
+                                <li>Odia - Native</li>
+                            </ul>
+                        </article>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">What Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-item animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p>"Arpit delivered an outstanding e‑commerce platform that exceeded our expectations. His attention to detail and technical expertise are remarkable."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
-                        <div>
-                            <h4>Rajesh Verma</h4>
-                            <p>CEO, TechRetail Inc.</p>
-                        </div>
-                    </div>
+        <section id="process" class="section section--light">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <span class="section-kicker">Process</span>
+                    <h2>A simple workflow that keeps projects clear and easy to manage.</h2>
+                    <p>Good delivery is usually about clarity, not complexity. This is the sequence I use to keep work organized and predictable.</p>
                 </div>
-                <div class="testimonial-item animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p>"The mobile app he built for our fitness startup is sleek, performant, and user‑friendly. His communication throughout the project was excellent."</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
-                        <div>
-                            <h4>Priya Sharma</h4>
-                            <p>Founder, FitLife Apps</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-item animate-on-scroll">
-                    <div class="testimonial-content">
-                        <p>"Working with Arpit on our cloud migration was a game‑changer. He ensured zero downtime and optimized our costs significantly. Highly recommended!"</p>
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Client">
-                        <div>
-                            <h4>Anil Kumar</h4>
-                            <p>CTO, DataFlow Solutions</p>
-                        </div>
-                    </div>
+
+                <div class="process-grid">
+                    <article class="process-card reveal">
+                        <span class="step-number">01</span>
+                        <h3>Discover</h3>
+                        <p>We define goals, audience, scope, and the most important outcome for the project.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span class="step-number">02</span>
+                        <h3>Design</h3>
+                        <p>I map the structure, content hierarchy, and visual direction before building.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span class="step-number">03</span>
+                        <h3>Build</h3>
+                        <p>The site is implemented with responsive layouts, clean code, and practical interactions.</p>
+                    </article>
+                    <article class="process-card reveal">
+                        <span class="step-number">04</span>
+                        <h3>Launch and support</h3>
+                        <p>After testing and handoff, I stay available for updates, maintenance, and improvements.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h3>Email</h3>
-                            <p>techfortonic.official@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h3>Phone</h3>
-                            <p>+91 84801 32050</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fab fa-whatsapp"></i>
-                        <div>
-                            <h3>WhatsApp</h3>
-                            <p><a href="https://wa.me/918480132050?text=Hello%20Arpit,%20I%20would%20like%20to%20get%20in%20touch%20regarding%20your%20services." target="_blank" style="text-decoration:none;">Chat on WhatsApp</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h3>Location</h3>
-                            <p>India</p>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+        <section id="contact" class="section section--dark">
+            <div class="container">
+                <div class="section-heading section-heading--light reveal">
+                    <span class="section-kicker">Contact</span>
+                    <h2>Have a project in mind? Let us build something polished and practical.</h2>
+                    <p>I am available for freelance, contract, and collaboration work. If you want a website that feels professional from day one, reach out and share the basics.</p>
                 </div>
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 Arpit Kumar Tali. All rights reserved.</p>
-            <p>Designed with <i class="fas fa-heart"></i> for the digital world</p>
+                <div class="contact-grid">
+                    <div class="contact-panel reveal">
+                        <div class="contact-intro">
+                            <p class="contact-label">Direct contact</p>
+                            <h3>Fastest ways to reach me</h3>
+                            <p>For quicker replies, use WhatsApp or email and include the project type, timeline, and any reference material you already have.</p>
+                        </div>
+
+                        <ul class="contact-list">
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <span>Email</span>
+                                    <a href="mailto:techfortonic.official@gmail.com">techfortonic.official@gmail.com</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <span>Phone</span>
+                                    <a href="tel:+918480132050">+91 84801 32050</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <div>
+                                    <span>WhatsApp</span>
+                                    <a href="https://wa.me/918480132050" target="_blank" rel="noopener noreferrer">Start a chat</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <span>Location</span>
+                                    <strong>Deogarh, Odisha, India</strong>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="contact-note">
+                            <strong>Typical response time</strong>
+                            <p>Usually within one business day.</p>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal" id="contactForm">
+                        <div class="field-grid">
+                            <div class="field">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Your email" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="project">Project type</label>
+                            <input type="text" id="project" name="project" placeholder="Website, app, support, or training" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="message">Project details</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Tell me what you want to build or improve" required></textarea>
+                        </div>
+
+                        <button type="submit" class="button button--primary button--full">Send via WhatsApp</button>
+                        <p class="form-help">I will use your message to open a WhatsApp chat with the details prefilled.</p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>Arpit Kumar Tali</strong>
+                <p>Web Developer, digital consultant, and support-focused problem solver.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+                <a href="Arpit_Kumar_Tali_Resume.pdf" download>Resume</a>
+            </div>
+            <p class="copyright">&copy; 2026 Arpit Kumar Tali. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
